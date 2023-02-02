@@ -1,5 +1,6 @@
 import './App.css';
-
+import {useTextToImage} from './hooks/useTextToImage';
+/*
 import fetch from 'node-fetch';
 import fs from 'fs';
 
@@ -53,17 +54,17 @@ async function f() {
 
   return responseJSON;
 }
-
+*/
 //
 function App() {
   //
-  const res = f();
-  console.log('res', res);
+  const {image, loaded} = useTextToImage();
+  console.log('image', image);
   //
   return (
     <div className="App">
       test
-      <img src={`data:image/gif;base64,${res?.artifacts[0].base64}`} alt="img" />
+      <img src={image} alt="img" />
     </div>
   );
 }
