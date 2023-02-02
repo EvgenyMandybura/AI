@@ -12,6 +12,7 @@ module.exports = function override(config, env) {
         net: false,
         buffer: false,
         stream: false,
+        mui: false
     };
     config.plugins.push(
         new webpack.ProvidePlugin({
